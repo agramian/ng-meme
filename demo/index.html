@@ -2,9 +2,8 @@
 <html ng-app="ngMemeDemoApp">
   <head>
     <title>ng-meme demo</title>
-    <link rel="stylesheet" type="text/css" href="app.css">
   </head>
-  <body>
+  <body ng-controller="ngMemeDemoAppCtrl">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
     <script src="app.js"></script>
     <script src="controllers.js"></script>
@@ -13,5 +12,6 @@
 		</div>
 		<input type="text" placeholder="{{memeTopLinePlaceholder}}" ng-model="memeTopLineText" ng-change="validateMemeText()">
 		<input type="text" placeholder="{{memeBottomLinePlaceholder}}" ng-model="memeBottomLineText" ng-change="validateMemeText()">
+    <button type="button" ng-click="openRawImageInNewWindow()">Open raw image in new window</button>
   </body>
 </html>
