@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="ngMemeDemoApp">
+  <head>
+    <title>ng-meme demo</title>
+    <link rel="stylesheet" type="text/css" href="app.css">
+  </head>
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers.js"></script>
+    <div style="width:500px; height:500px; background-color:#CCC">
+		    <!--<canvas meme id='memeCanvas' height='{{memeImageHeight}}' width='{{memeImageWidth}}' top-line='{{memeTopLineText}}' bottom-line='{{memeBottomLineText}}' image='{{shareImage}}' api-instance='memeApi' meme-loaded-callback='memeLoadedCallback' meme-loaded-errback='memeLoadedErrback'> </canvas>-->
+		</div>
+		<input type="text" placeholder="{{memeTopLinePlaceholder}}" ng-model="memeTopLineText" ng-change="validateMemeText()">
+		<input type="text" placeholder="{{memeBottomLinePlaceholder}}" ng-model="memeBottomLineText" ng-change="validateMemeText()">
+  </body>
+</html>
