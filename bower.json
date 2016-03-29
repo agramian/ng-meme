@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "homepage": "https://github.com/agramian/ng-meme",
   "description": "AngularJS directive for creating memes",
-  "main": "src/meme-directive.js",
+  "main": [
+    "./src/meme-directive.js",
+    "./src/meme-factory.js"
+  ],
   "keywords": [
     "angular",
     "angularjs",
@@ -20,13 +23,9 @@
   ],
   "license": "MIT",
   "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "demo"
   ],
   "dependencies": {
-    "angular": "~1.x.x"
+    "angular": "^1.2"
   }
 }
