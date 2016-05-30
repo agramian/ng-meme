@@ -3,10 +3,10 @@ angular.module('memeDirective', [])
 	return {
 		scope: {
         	apiInstance: '='
-      	},
+    	},
     	link: function(scope, element, attrs){
     		api = scope.apiInstance;
-			api.setCanvas(element[0]);	
+			api.setCanvas(element[0]);
 			if (attrs.memeLoadedCallback) {
 				var parentGet = $parse(attrs['memeLoadedCallback']);
 				api.setLoadCallback(parentGet(scope.$parent));
@@ -14,14 +14,14 @@ angular.module('memeDirective', [])
 			if (attrs.memeLoadedErrback) {
 				var parentGet = $parse(attrs['memeLoadedErrback']);
 				api.setLoadErrback(parentGet(scope.$parent));
-			};							
-			attrs.$observe('topLine', function(event) {				
+			};
+			attrs.$observe('topLine', function(event) {
 				api.setMemeText(attrs.topLine, null);
-				api.drawMeme(); 
+				api.drawMeme();
 			});
 			attrs.$observe('bottomLine', function(event) {
 				api.setMemeText(null, attrs.bottomLine);
-				api.drawMeme(); 
+				api.drawMeme();
 			});
 			attrs.$observe('width', function(event) {
 				api.resizeMeme(attrs.width, attrs.height);
@@ -31,7 +31,7 @@ angular.module('memeDirective', [])
 			});
 			attrs.$observe('image', function(event) {
 				api.loadImage(attrs.image);
-			});				
+			});
 		}
 	};
 });

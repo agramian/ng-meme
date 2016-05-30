@@ -4,14 +4,18 @@
     <title>ng-meme demo</title>
   </head>
   <body ng-controller="ngMemeDemoAppCtrl">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script src="app.js"></script>
     <script src="controllers.js"></script>
-    <div style="width:500px; height:500px; background-color:#CCC">
-		    <!--<canvas meme id='memeCanvas' height='{{memeImageHeight}}' width='{{memeImageWidth}}' top-line='{{memeTopLineText}}' bottom-line='{{memeBottomLineText}}' image='{{shareImage}}' api-instance='memeApi' meme-loaded-callback='memeLoadedCallback' meme-loaded-errback='memeLoadedErrback'> </canvas>-->
+    <script src="../src/meme-factory.js"></script>
+    <script src="../src/meme-directive.js"></script>
+    <div id='memeDiv' style="width:500px; height:500px; background-color:#CCC;">
+		    <canvas meme id='memeCanvas' height='{{memeImageHeight}}' width='{{memeImageWidth}}' top-line='{{memeTopLineText}}' bottom-line='{{memeBottomLineText}}' image='{{memeImage}}' api-instance='memeApi' meme-loaded-callback='memeLoadedCallback' meme-loaded-errback='memeLoadedErrback'> </canvas>
 		</div>
 		<input type="text" placeholder="{{memeTopLinePlaceholder}}" ng-model="memeTopLineText" ng-change="validateMemeText()">
 		<input type="text" placeholder="{{memeBottomLinePlaceholder}}" ng-model="memeBottomLineText" ng-change="validateMemeText()">
-    <button type="button" ng-click="openRawImageInNewWindow()">Open raw image in new window</button>
+    <button type="button" ng-click="openRawImageInNewWindow(true)">Open raw image in new window</button>
+    <button type="button" ng-click="openRawImageInNewWindow(false)">Open raw image in new window with canvas</button>
+    <button type="button" ng-click="getRawImageData()">Get raw image data</button>
   </body>
 </html>
