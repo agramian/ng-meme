@@ -26,7 +26,18 @@ Include the meme factory and directive scripts in your app.
 
 Add a canvas element with the **meme** directive identifier along with values or bindings to the various attributes.
 
-`<canvas meme id='memeCanvas' height='{{memeImageHeight}}' width='{{memeImageWidth}}' top-line='{{memeTopLineText}}' bottom-line='{{memeBottomLineText}}' image='{{memeImage}}' api-instance='memeApi' meme-loaded-callback='memeLoadedCallback' meme-loaded-errback='memeLoadedErrback'> </canvas>`
+```
+<canvas meme
+  id='memeCanvas'
+  height='{{memeImageHeight}}'
+  width='{{memeImageWidth}}'
+  top-line='{{memeTopLineText}}'
+  bottom-line='{{memeBottomLineText}}'
+  image='{{memeImage}}'
+  api-instance='memeApi'
+  meme-loaded-callback='memeLoadedCallback'
+  meme-loaded-errback='memeLoadedErrback'></canvas>
+```
 
 Include the **memeFactory** and **memeDirective** dependencies.
 
